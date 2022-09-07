@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="assets/css/stylesForm.css" />
+</head>
+
+
+<body>
+  <div class="contact_form">
+    <div class="formulario">
+      <h1>Formulario de evalución</h1>
+      <h3>Escríbenos y en breve los pondremos en contacto contigo</h3>
+      <form action="registrarForm.php" method="post">
+        <p>
+          <label for="email" class="colocar_email">Email
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+        </p>
+        <p>
+          <label for="nombre" class="colocar_nombre">Nombre
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="text" name="introducir_nombre" id="nombre" required="obligatorio"
+            placeholder="Escribe tu nombre">
+        </p>
+        <p>
+          <label for="apellido" class="colocar_apellido">Apellido
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="text" name="introducir_apellido" id="apellido" required="obligatorio"
+            placeholder="Escribe tu apellido">
+        </p>
+        <p>
+          <label for="edad" class="colocar_edad">Edad
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="number" name="introducir_edad" id="edad" placeholder="Escribe tu edad" minlength="18"
+            maxlength="80">
+        </p>
+        <p>
+          <label for="" class="colocar_telefono">DNI
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="number" name="introducir_dni" id="telefono" placeholder="Escriba su DNI" maxlength="8">
+        </p>
+        <p>
+          <label for="" class="colocar_telefono">Teléfono
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="number" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono"
+            maxlength="10">
+        </p>
+        <p>
+          <label for="" class="ruta_cliente">Ruta
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="tel" name="ruta_cliente" id="ruta_cliente" placeholder="Escribe que ruta tomara">
+        </p>
+        <p>
+          <label for="" class="residencia_cliente">residencia
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="tel" name="residencia_cliente" id="residencia_cliente" placeholder="Escribe donde reside">
+        </p>
+        <p>
+          <label for="" class="residencia_cliente">lugar entrega del auto
+            <span class="obligatorio">*</span>
+          </label>
+          <br>
+          <select name="menu" class="menuPlase">
+            <option value="0">...</option>
+            <option value="1">tanburco</option>
+            <option value="2">patibanba</option>
+            <option value="3" selected>publo joven</option>
+          </select>
+        </p>
+        <p>
+          <label for="" class="residencia_cliente">oficio
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="tel" name="oficio" id="residencia_cliente" placeholder="Escribe cual es su oficio">
+        </p>
+        <p>
+          <label for="asunto" class="colocar_asunto">Asunto
+            <span class="obligatorio">*</span>
+          </label>
+          <input type="text" name="introducir_asunto" id="assunto" required="obligatorio"
+            placeholder="Escribe un asunto">
+        </p>
+
+        <p class="check">
+        <div> segunda entrevista</div>
+        <span class="obligatorio">:</span>virtual
+        <input type="radio" name="check" value="virtual" class="check_2" /> precencia
+        <input type="radio" name="check" value="precencia" class="check_2" />
+        </p>
+        <p>
+          <button type="submit" name="enviar_formulario" id="enviar">
+        </p>
+        <p>Enviar</p>
+        </button>
+        <p class="aviso">
+          <span class="obligatorio"> * </span>los campos son obligatorios.
+        </p>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
