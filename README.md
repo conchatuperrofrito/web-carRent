@@ -1,2 +1,3 @@
-lucho carlos checcaña alejandro
-arturo letona porras
+lucho carlos checcaña alejandro.
+
+Arturo letona porras
