@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚘 Responsive Car website
 
 # referenias code wen Car https://www.youtube.com/watch?v=bDngcOQ8Img&t=7557s
@@ -45,3 +46,8 @@ Outlander
 #8
 Chrylers
 Pacifica
+=======
+lucho carlos checcaña alejandro.
+
+Arturo letona porras
+>>>>>>> 6d70517018d9c141f5af03514135d5d14a772e26
