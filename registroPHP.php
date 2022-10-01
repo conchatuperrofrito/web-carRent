@@ -8,26 +8,25 @@ $conexion  =mysqli_connect(
 );
 */
 
-$servername="localhost"; //databases.000webhost.  //2a02:4780:bad:f00d::17
-$database="id18834008_cavinainternet";//pT_@bU3!c8pH}{*v
-$username ="	id18834008_luis2";
-$contra = "bMoVOfh-5h<QoUY%";//bMoVOfh-5h<QoUY%
-$mysqli=new mysqli($servername, $username, $contra , $database);
+$servername = "localhost"; //databases.000webhost.  //2a02:4780:bad:f00d::17
+$database = "id18834008_cavinainternet"; //pT_@bU3!c8pH}{*v
+$username = "	id18834008_luis2";
+$contra = "bMoVOfh-5h<QoUY%"; //bMoVOfh-5h<QoUY%
+$mysqli = new mysqli($servername, $username, $contra, $database);
 $mysqli->set_charset("utf8");
 if (!$mysqli) {
-  echo"error en conexion";
+  echo "error en conexion";
 }
-$nombre =$_POST['usuarioR'];
-$password =$_POST['passwordR'];
-$monto =$_POST['montoR'];
+$nombre = $_POST['usuarioR'];
+$password = $_POST['passwordR'];
+$monto = $_POST['montoR'];
 
-$query ="INSERT INTO tusuarios (ususario,passwort,horaUsuario,minutoUsuario,segundoUsuario)
+$query = "INSERT INTO tusuarios (ususario,passwort,horaUsuario,minutoUsuario,segundoUsuario)
 values ('$nombre','$password',$monto,1,1)";
-$resultado =mysqli_query($mysqli,$query);
+$resultado = mysqli_query($mysqli, $query);
 
 if ($resultado) {
   echo "a";
-}else {
+} else {
   echo "error";
 }
-?>

@@ -20,10 +20,3 @@ if($query){
     location.href = 'ejercicio18.html';
     </script>";
 }
-
-
-
-
-
-
-?>

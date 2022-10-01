@@ -866,3 +866,6 @@ img {
     margin: 0.75rem 0 1.25rem 2rem;
   }
 }
+.color_user {
+  color: red;
+}

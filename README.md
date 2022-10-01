@@ -1,13 +1,47 @@
 # 🚘 Responsive Car website
-## [Watch it on youtube](https://youtu.be/bDngcOQ8Img)
-### 🚘 Responsive Car website
 
-- Responsive Car website Using HTML CSS & JavaScript
-- Contains animations when scrolling.
-- Smooth scrolling in each section.
-- Developed first with the Mobile First methodology, then for desktop.
-- Compatible with all mobile devices and with a beautiful and pleasant user interface.
+# referenias code wen Car https://www.youtube.com/watch?v=bDngcOQ8Img&t=7557s
 
-💙 Join the channel to see more videos like this. [Bedimcode](https://www.youtube.com/c/Bedimcode)
+# repositorio https://www.youtube.com/watch?v=bDngcOQ8Img&t=7557s
 
-![preview img](/preview.png)
+# repositorio Fonts: https://fonts.google.com/
+
+# Swiper: https://swiperjs.com/
+
+# repositorio https://www.youtube.com/watch?v=bDngcOQ8Img&t=7557s
+
+# repositorio https://www.youtube.com/watch?v=bDngcOQ8Img&t=7557s
+
+#autos actuales
+#1
+Cadillac
+XT4
+#2
+Alfa Romeo
+Giulia
+#3
+Acura
+TLX
+#4
+Jeep
+Wrangler
+#5
+Chevrover
+Colorado
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+#6
+Volvo
+XC40
+#7
+Gmc
+Yukon
+#8
+Mitshubishi
+Outlander
+#8
+Chrylers
+Pacifica

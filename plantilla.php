@@ -1,3 +1,16 @@
+<?php
+include("db.php");
+$ide = $_GET["id"];
+$consulta = "SELECT*FROM tusuario where correo_cliente ='$ide'";
+$resultado = mysqli_query($conexion, $consulta);
+$filas = mysqli_num_rows($resultado);
+$datos = $resultado->fetch_object();
+//modo tradicional
+// $row = mysqli_fetch_array($resultado); 
+// $usuario_usuario = $row['usuario_usuario'];
+//modo arouw
+$datos->nombre_usuario;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,18 +46,20 @@
       <div class="nav__menu" id="nav-menu">
         <ul class="nav__list">
           <li class="nav__item">
-            <a href="#" class="nav__link active-link " target="_blank">home</a>
-            
+            <a href="#" class="nav__link active-link "> hogar </a>
           </li>
-          
+
           <li class="nav__item">
-            <a href="#about" class="nav__link"> Aboud</a>
-          </li>
-          <li class="nav__item">
-            <a href="#popular" class="nav__link">Popular </a>
+            <a href="#about" class="nav__link"> sobre </a>
           </li>
           <li class="nav__item">
-            <a href="#featured" class="nav__link"> Featured</a>
+            <a href="#popular" class="nav__link"> Popular </a>
+          </li>
+          <li class="nav__item">
+            <a href="#featured" class="nav__link"> Presentado </a>
+          </li>
+          <li class="nav__item">
+            <a href="#featured" class="nav__link log"> Bienbenido : <?php echo $datos->nombre_usuario; ?></a>
           </li>
           <!-- <li class="nav__item">
             <a href="#register" class="nav__link log"> INGRESAR</a>
@@ -60,7 +75,6 @@
       </div>
     </nav>
   </header>
-
   <!--==================== MAIN ====================-->
   <main class="main">
     <!--==================== HOME ====================-->
@@ -69,10 +83,10 @@
       <div class="shape shape__small"></div>
       <div class="home__container container grid">
         <div class="home__data">
-          <h1 class="home__title">Choose The Best Car</h1>
-          <h2 class="home__subtile">Porsche Mission E</h2>
+          <h1 class="home__title">Elige el mejor coche</h1>
+          <h2 class="home__subtile">Porsche Misión E</h2>
           <h3 class="home__elec">
-            <i class="ri-flashlight-fill"></i>Electric car
+            <i class="ri-flashlight-fill"></i>Coche eléctrico
           </h3>
         </div>
         <img src="assets/img/home.png" alt="" class="home__img" />
@@ -82,24 +96,24 @@
               <i class="ri-temp-cold-line"></i>
             </div>
             <h2 class="home__car-number">24º</h2>
-            <h3 class="home__car-name">TEMPERATURE</h3>
+            <h3 class="home__car-name"> TEMPERATURA</h3>
           </div>
           <div class="home__car-data">
             <div class="home__car-icon">
               <i class="ri-dashboard-3-line"></i>
             </div>
             <h2 class="home__car-number">452</h2>
-            <h3 class="home__car-name">MILEAGE</h3>
+            <h3 class="home__car-name">KILOMETRAJE</h3>
           </div>
           <div class="home__car-data">
             <div class="home__car-icon">
               <i class="ri-flashlight-fill"></i>
             </div>
             <h2 class="home__car-number">94%</h2>
-            <h3 class="home__car-name">BATTERY</h3>
+            <h3 class="home__car-name">BATERÍA</h3>
           </div>
         </div>
-        <a href="form.html" target="_blank" class="home__button" >START</a>
+        <a href="form.php?id=<?php echo $ide ?>" target="_blank" class="home__button">COMIENZO</a>
       </div>
     </section>
 
@@ -111,31 +125,34 @@
           <div class="about__card">
             <h3 class="about__card-title">2.500+</h3>
             <p class="about__card-description">
-              Supercharges placed along popular routes
+              Sobrecargas colocadas a lo largo de rutas populares
             </p>
           </div>
         </div>
         <div class="about__data">
           <h2 class="section__title about__title">
-            Machine With <br />Future Teschnology
+            Máquina con <br />tecnología futura
           </h2>
           <p class="about__description">
             See the future with high-performance electric carsasdasdsad
             asdasdasdasdasdasddddd asd asd a sd asd ads a. See the future with
             high-performance electric carsasdasdsad asdasdasdasdasdasddddd asd
-            asd a sd asd ads.
+            asd a sd asd ads.Vea el futuro con autos eléctricos de alto rendimiento,
+            disponen de 400 kilómetros de autonomía en menos de 20 minutos de carga,
+            en sus versiones estándares, con 600 caballos fuerza, 500 kilómetros por hora y
+            será capaz de cargar el 80% de la misma en tan solo 15 minutos,cero emisiones.
+            Proyecto de carga rápida del que se beneficiarían todos los vehículos del grupo,
           </p>
-          <a href="#" class="button">Know more</a>
+          <a href="#" class="button">Saber más</a>
         </div>
       </div>
     </section>
-    
+
     <!--====================  POPULAR  ====================-->
 
     <section class="popular section" id="popular">
       <h2 class="section__title">
-        Choose your Car <br />
-        of the Porsche Brand
+        Elige tu Coche <br /> de la Marca Porsche
       </h2>
       <div class="popular__container container swiper">
         <div class="swiper-wrapper">
@@ -157,10 +174,10 @@
             </div>
             <h3 class="popular__price">$654,215</h3>
             <button class="button popular__button">
-             <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line" >
-              </i>
-            </a> 
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line">
+                </i>
+              </a>
               </i>
             </button>
           </article>
@@ -182,10 +199,10 @@
             </div>
             <h3 class="popular__price">$654,215</h3>
             <button class="button popular__button">
-             <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line" >
-              </i>
-            </a> 
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line">
+                </i>
+              </a>
 
             </button>
           </article>
@@ -207,11 +224,11 @@
             </div>
             <h3 class="popular__price">$654,215</h3>
             <button class="button popular__button">
-             <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line" >
-              </i>
-            </a> 
-            
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line">
+                </i>
+              </a>
+
             </button>
           </article>
           <article class="popular__card swiper-slide">
@@ -232,11 +249,11 @@
             </div>
             <h3 class="popular__price">$654,215</h3>
             <button class="button popular__button">
-              <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line" >
-              </i>
-            </a> 
-     
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line">
+                </i>
+              </a>
+
             </button>
           </article>
           <article class="popular__card swiper-slide">
@@ -257,10 +274,10 @@
             </div>
             <h3 class="popular__price">$654,215</h3>
             <button class="button popular__button">
-                    <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line" >
-              </i>
-            </a> 
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line">
+                </i>
+              </a>
             </button>
           </article>
         </div>
@@ -270,7 +287,7 @@
 
     <!--==================== FEATURES ====================-->
     <section class="features section">
-      <h2 class="section__title">More Feature</h2>
+      <h2 class="section__title">Más características</h2>
       <div class="features__container container grid">
         <div class="features__group">
           <img src="assets/img/features.png" alt="" class="features__img" />
@@ -284,11 +301,11 @@
           </div>
           <div class="features__card features__card-2">
             <h3 class="features__card-title"></h3>
-            <p class="features__card-description">Km <br> Range</p>
+            <p class="features__card-description">Km <br> Rango</p>
           </div>
           <div class="features__card features__card-3">
             <h3 class="features__card-title">480</h3>
-            <p class="features__card-description">Km <br> Travel</p>
+            <p class="features__card-description">Km <br> Recorrido </p>
           </div>
         </div>
       </div>
@@ -298,7 +315,7 @@
     <!--==================== FEATURED ====================-->
     <section class="featured section" id="featured">
       <h2 class="section__title">
-        Feature Luxury Cars
+        Más características
 
       </h2>
       <div class="featured__container container tabs_wrap">
@@ -334,10 +351,10 @@
             <img src="assets/img/featured1.png" alt="" class="featured__img">
             <h3 class="featured__price">$45.542</h3>
             <button class="button featured__button">
-         
-                    <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line"></i>
-            </a> 
+
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line"></i>
+              </a>
             </button>
           </article>
           <article class="featured__card tesla">
@@ -347,10 +364,10 @@
             <img src="assets/img/featured2.png" alt="" class="featured__img">
             <h3 class="featured__price">$45.258</h3>
             <button class="button featured__button">
-             
-                    <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line"></i>
-            </a> 
+
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line"></i>
+              </a>
             </button>
           </article>
           <article class="featured__card audii">
@@ -360,10 +377,10 @@
             <img src="assets/img/featured3.png" alt="" class="featured__img">
             <h3 class="featured__price">$453.258</h3>
             <button class="button featured__button">
-              
-                    <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line"></i>
-            </a> 
+
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line"></i>
+              </a>
             </button>
           </article>
           <article class="featured__card audii">
@@ -373,10 +390,10 @@
             <img src="assets/img/featured4.png" alt="" class="featured__img">
             <h3 class="featured__price">$415.258</h3>
             <button class="button featured__button">
-              
-                    <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line"></i>
-            </a> 
+
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line"></i>
+              </a>
             </button>
           </article>
           <article class="featured__card porsche">
@@ -386,10 +403,10 @@
             <img src="assets/img/featured5.png" alt="" class="featured__img">
             <h3 class="featured__price">$10.258</h3>
             <button class="button featured__button">
-              
-                    <a href="form.html" target="_blank">
-              <i class="ri-shopping-bag-2-line"></i>
-            </a> 
+
+              <a href="form.php?id=<?php echo $ide ?>" target="_blank">
+                <i class="ri-shopping-bag-2-line"></i>
+              </a>
             </button>
           </article>
         </div>
@@ -402,15 +419,18 @@
       <img src="assets/img/offer-bg.png" alt="" class="offer__bg">
       <div class="offer__data">
         <h2 class="section__title offer__title">
-          Do you Want TO Receive <br> Special Offers
+          Quiere Recibir <br> Ofertas Especiales
         </h2>
         <p class="offer__description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit tenetur, nesciunt consectetur provident libero a sapiente sed molestias ipsam magnam veritatis dignissimos 
+          Busca Ofertas En Coches Nuevos es ¡100% de privacidad
+          y 99% Coincidencia con Seguro Coche.
+          Busca - Gratis, Privado y Seguro.
+          Fácil de Usar. Información Relacionada. <a href="https://pe.searchley.com/ws?q=cotizacion%20online%20seguro%20auto&asid=sl_ch598&mt=b&nw=s&de=c&ap=&ac=14780&cid=14928070512&aid=127157851086&locale=es_PE&gclid=EAIaIQobChMIw5yp19aj-gIVCjORCh3kZgSHEAAYBCAAEgKHzvD_BwE">Click aquí</a>
         </p>
-     
-      
-        <a href="#"  class="button">
-          STIfler Maister
+
+
+        <a href="#" class="button">
+          Porsche Taycan
         </a>
         <img src="assets/img/offer.png" alt="" class="offer__img">
       </div>
@@ -422,22 +442,22 @@
     <section class="logos section">
       <div class="logos__container container grid">
         <div class="logos__content">
-          <img src="assets/img/logo1.png" alt="" class="logos__img"  >
+          <img src="assets/img/logo1.png" alt="" class="logos__img">
         </div>
         <div class="logos__content">
-          <img src="assets/img/logo2.png" alt="" class="logos__img"  >
+          <img src="assets/img/logo2.png" alt="" class="logos__img">
         </div>
         <div class="logos__content">
-          <img src="assets/img/logo3.png" alt="" class="logos__img"  >
+          <img src="assets/img/logo3.png" alt="" class="logos__img">
         </div>
         <div class="logos__content">
-          <img src="assets/img/logo4.png" alt="" class="logos__img"  >
+          <img src="assets/img/logo4.png" alt="" class="logos__img">
         </div>
         <div class="logos__content">
-          <img src="assets/img/logo5.png" alt="" class="logos__img"  >
+          <img src="assets/img/logo5.png" alt="" class="logos__img">
         </div>
         <div class="logos__content">
-          <img src="assets/img/logo6.png" alt="" class="logos__img"  >
+          <img src="assets/img/logo6.png" alt="" class="logos__img">
         </div>
       </div>
     </section>
